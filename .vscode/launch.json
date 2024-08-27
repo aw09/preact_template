@@ -1,43 +1,79 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Dev Server",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/node_modules/.bin/preact",
-        "args": ["watch"],
-        "env": {
-          "NODE_ENV": "development",
-          "NODE_OPTIONS": "--openssl-legacy-provider"
-        },
-        "console": "integratedTerminal",
-        "runtimeExecutable": "/opt/homebrew/bin/node"
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Dev Server",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/preact",
+      "args": [
+        "watch"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "NODE_OPTIONS": "--openssl-legacy-provider"
       },
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Build",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/node_modules/.bin/preact",
-        "args": ["build"],
-        "env": {
-          "NODE_ENV": "production",
-          "NODE_OPTIONS": "--openssl-legacy-provider"
-        },
-        "console": "integratedTerminal",
-        "runtimeExecutable": "/opt/homebrew/bin/node"
+      "console": "integratedTerminal",
+      "runtimeExecutable": "/opt/homebrew/bin/node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Build",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/preact",
+      "args": [
+        "build"
+      ],
+      "env": {
+        "NODE_ENV": "production",
+        "NODE_OPTIONS": "--openssl-legacy-provider"
       },
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Tests",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/node_modules/.bin/jest",
-        "args": ["--config", "jest.config.js"],
-        "console": "integratedTerminal",
-        "runtimeExecutable": "/opt/homebrew/bin/node"
-      }
-    ]
-  }
+      "console": "integratedTerminal",
+      "runtimeExecutable": "/opt/homebrew/bin/node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Tests",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--config",
+        "jest.config.js"
+      ],
+      "console": "integratedTerminal",
+      "runtimeExecutable": "/opt/homebrew/bin/node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Serve Build",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/node_modules/.bin/http-server",
+      "args": [
+        "build"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "console": "integratedTerminal",
+      "runtimeExecutable": "/opt/homebrew/bin/node"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Build and Serve",
+      "configurations": ["Launch Build", "Serve Build"]
+    }
+  ]
+}
