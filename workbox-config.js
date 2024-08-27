@@ -1,7 +1,8 @@
 module.exports = {
 	globDirectory: 'build/',
 	globPatterns: [
-		'**/*.{html,json,ico,png,svg,css,js}'
+		"**/*.{js,css,html,png,jpg,jpeg,gif,svg,webp}",
+		"**/*.json"
 	],
 	swDest: 'build/sw.js',
 	ignoreURLParametersMatching: [
