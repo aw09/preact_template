@@ -28,11 +28,14 @@
     "sirv-cli": "^2.0.2"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "firebase": "^10.13.0",
     "googleapis": "^142.0.0",
+    "postcss": "^8.4.41",
     "preact": "^10.11.3",
     "preact-render-to-string": "^5.2.6",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "tailwindcss": "^3.4.10"
   },
   "jest": {
     "preset": "jest-preset-preact",
