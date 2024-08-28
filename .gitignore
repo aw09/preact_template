@@ -3,3 +3,6 @@ node_modules
 /*.log
 size-plugin.json
 .firebase
+.env
+firebaseConfig.js
+.DS_Store

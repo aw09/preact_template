@@ -1,10 +1,7 @@
-import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style.css';
 
 const Header = () => (
-	<header class={style.header}>
-		<a href="/" class={style.logo}>
+    <header className="fixed left-0 top-0 flex justify-between w-full h-14 bg-orange-300 shadow-md z-50">
+		{/* <a href="/" class={style.logo}>
 			<img src="../../assets/preact-logo-inverse.svg" alt="Preact Logo" height="32" width="32" />
 			<h1>Preact CLI</h1>
 		</a>
@@ -18,7 +15,7 @@ const Header = () => (
 			<Link activeClassName={style.active} href="/profile/john">
 				John
 			</Link>
-		</nav>
+		</nav> */}
 	</header>
 );
 
